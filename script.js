@@ -47,23 +47,22 @@ closeIcon.addEventListener("click", () => {
 
 //to print localstorage value from there to console
 function showNotes() {
-  //removing previous notes before adding new ones
+  // Removing previous notes before adding new ones
   document.querySelectorAll(".note").forEach((note) => note.remove());
 
   notes.forEach((note, index) => {
-    //litag was copy pasted from html part that was initially done
+    // litag was copy-pasted from HTML part that was initially done
     let liTag = ` <li class="note">
                             <div class="details">
                             <p>${note.title}</p>
-                            <span
-                                >${note.description}</span>
+                            <span>${note.description}</span>
                             </div>
                             <div class="bottom-content">
                                 <span>${note.date}</span>
                                 <div class="settings">
                                     <i onclick = "showMenu(this)" class="uil uil-ellipsis-h"></i>
                                     <ul class="menu">
-                                    <li onclick="updateNote(${index},'${note.title}', '${note.description}' )"><i class="uil uil-pen"></i>Edit</li>
+                                    <li onclick="updateNote(${index}, '${note.title}', '${note.description}' )"><i class="uil uil-pen"></i>Edit</li>
                                     <li onclick="deleteNote(${index})"><i class="uil uil-trash"></i>Delete</li>
                                     </ul>
                                 </div>
@@ -72,6 +71,7 @@ function showNotes() {
     addBox.insertAdjacentHTML("afterend", liTag);
   });
 }
+
 showNotes(); //pehle toh storage da data dikhda rhe
 
 function showMenu(elem) {
